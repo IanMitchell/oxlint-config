@@ -77,7 +77,8 @@ export const config = defineConfig({
 		"no-await-in-loop": "error",
 		// Trust the developer
 		"no-bitwise": "off",
-		"no-caller": "error",
+		// Not necessary with strict mode
+		"no-caller": "off",
 		"no-case-declarations": "error",
 		"no-class-assign": "error",
 		"no-compare-neg-zero": "error",
@@ -125,7 +126,8 @@ export const config = defineConfig({
 		"no-inner-declarations": "error",
 		"no-invalid-regexp": "error",
 		"no-irregular-whitespace": "error",
-		"no-iterator": "error",
+		// Incredibly unlikely
+		"no-iterator": "off",
 		"no-label-var": "error",
 		"no-labels": "error",
 		"no-lone-blocks": "error",
@@ -145,7 +147,8 @@ export const config = defineConfig({
 		// Handled by TypeScript
 		"no-new-native-nonconstructor": "off",
 		"no-new-wrappers": "error",
-		"no-nonoctal-decimal-escape": "error",
+		// Incredibly unlikely
+		"no-nonoctal-decimal-escape": "off",
 		// Handled by TypeScript
 		"no-obj-calls": "off",
 		"no-object-constructor": "error",
@@ -157,7 +160,8 @@ export const config = defineConfig({
 		"no-prototype-builtins": "error",
 		"no-redeclare": "error",
 		"no-regex-spaces": "error",
-		"no-restricted-globals": "error",
+		// Not necessary
+		"no-restricted-globals": "off",
 		// This is a setting that should be enabled project by project
 		"no-restricted-imports": "off",
 		"no-return-assign": "error",
@@ -180,7 +184,8 @@ export const config = defineConfig({
 		"no-unassigned-vars": "error",
 		// Handled by TypeScript
 		"no-undef": "off",
-		"no-undefined": "error",
+		// Prefer no-void
+		"no-undefined": "off",
 		"no-unexpected-multiline": "error",
 		"no-unmodified-loop-condition": "error",
 		"no-unneeded-ternary": ["error", { defaultAssignment: false }],
@@ -203,7 +208,7 @@ export const config = defineConfig({
 		"no-useless-rename": "error",
 		"no-useless-return": "error",
 		"no-var": "error",
-		"no-void": "error",
+		"no-void": ["error", { allowAsStatement: true }],
 		// Trust the developer
 		"no-warning-comments": "off",
 		// Handled by TypeScript
@@ -216,7 +221,8 @@ export const config = defineConfig({
 		"prefer-numeric-literals": "error",
 		"prefer-object-has-own": "error",
 		"prefer-object-spread": "error",
-		"prefer-promise-reject-errors": "error",
+		// Prefer `typescript/prefer-promise-reject-errors`
+		"prefer-promise-reject-errors": "off",
 		"prefer-rest-params": "error",
 		"prefer-spread": "error",
 		"prefer-template": "error",
@@ -237,7 +243,7 @@ export const config = defineConfig({
 		"valid-typeof": "error",
 		// Trust the developer
 		"vars-on-top": "off",
-		"yoda": ["error", "always", { exceptRange: true }],
+		"yoda": ["error", "never", { exceptRange: true }],
 
 		/**
 		 * Import
@@ -247,7 +253,7 @@ export const config = defineConfig({
 		"import/export": "error",
 		// Trust the developer
 		"import/exports-last": "off",
-		// todo: import/extensions
+		"import/extensions": ["error", "always", { "ignorePackages": true }],
 		"import/first": "error",
 		// Trust the developer
 		"import/group-exports": "off",
@@ -263,7 +269,8 @@ export const config = defineConfig({
 		"import/no-commonjs": "error",
 		// Trust the developer
 		"import/no-cycle": "off",
-		"import/no-default-export": "error",
+		// We want this, but too many libraries have it baked in
+		"import/no-default-export": "off",
 		"import/no-duplicates": ["error", { preferInline: true }],
 		"import/no-dynamic-require": "error",
 		"import/no-empty-named-blocks": "error",
@@ -434,7 +441,8 @@ export const config = defineConfig({
 		 * promise
 		 */
 		"promise/always-return": "error",
-		"promise/avoid-new": "error",
+		// Too restrictive, largely covered by other rules
+		"promise/avoid-new": "off",
 		"promise/catch-or-return": "error",
 		"promise/no-callback-in-promise": "error",
 		"promise/no-multiple-resolved": "error",
@@ -492,7 +500,8 @@ export const config = defineConfig({
 		"react/jsx-no-useless-fragment": "error",
 		"react/jsx-pascal-case": "error",
 		"react/jsx-props-no-spread-multi": "error",
-		"react/jsx-props-no-spreading": "error",
+		// Covered by TypeScript and too restrictive with libraries
+		"react/jsx-props-no-spreading": "off",
 		"react/no-array-index-key": "error",
 		"react/no-children-prop": "error",
 		"react/no-clone-element": "error",
@@ -501,7 +510,7 @@ export const config = defineConfig({
 		// We do not use classes
 		"react/no-did-mount-set-state": "off",
 		// We do not use classes
-		"react/no-direct-mutation-state": "error",
+		"react/no-direct-mutation-state": "off",
 		// We use React 19
 		"react/no-find-dom-node": "off",
 		// We do not use classes
@@ -741,7 +750,8 @@ export const config = defineConfig({
 		"unicorn/no-lonely-if": "error",
 		"unicorn/no-magic-array-flat-depth": "error",
 		"unicorn/no-negation-in-equality-check": "error",
-		"unicorn/no-nested-ternary": "error",
+		// Prefer the stricter `no-nested-ternary` rule
+		"unicorn/no-nested-ternary": "off",
 		"unicorn/no-new-array": "error",
 		"unicorn/no-new-buffer": "error",
 		// Disagree with the premise
@@ -752,7 +762,8 @@ export const config = defineConfig({
 		"unicorn/no-single-promise-in-promise-methods": "error",
 		"unicorn/no-static-only-class": "error",
 		"unicorn/no-thenable": "error",
-		"unicorn/no-this-assignment": "error",
+		// Prefer the `typescript/no-this-alias` rule
+		"unicorn/no-this-assignment": "off",
 		"unicorn/no-typeof-undefined": "error",
 		"unicorn/no-unnecessary-array-flat-depth": "error",
 		"unicorn/no-unnecessary-array-splice-count": "error",
@@ -793,7 +804,8 @@ export const config = defineConfig({
 		"unicorn/prefer-dom-node-text-content": "error",
 		"unicorn/prefer-event-target": "error",
 		"unicorn/prefer-global-this": "error",
-		"unicorn/prefer-includes": "error",
+		// Prefer the `typescript/prefer-includes` rule
+		"unicorn/prefer-includes": "off",
 		"unicorn/prefer-keyboard-event-key": "error",
 		"unicorn/prefer-logical-operator-over-ternary": "error",
 		"unicorn/prefer-math-min-max": "error",
@@ -819,7 +831,8 @@ export const config = defineConfig({
 		"unicorn/prefer-string-raw": "error",
 		"unicorn/prefer-string-replace-all": "error",
 		"unicorn/prefer-string-slice": "error",
-		"unicorn/prefer-string-starts-ends-with": "error",
+		// Prefer the `typescript/prefer-string-starts-ends-with` rule
+		"unicorn/prefer-string-starts-ends-with": "off",
 		"unicorn/prefer-string-trim-start-end": "error",
 		"unicorn/prefer-structured-clone": "error",
 		// Trust the developer
