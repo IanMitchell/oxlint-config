@@ -253,7 +253,7 @@ export const config = defineConfig({
 		"import/export": "error",
 		// Trust the developer
 		"import/exports-last": "off",
-		"import/extensions": ["error", "always", { "ignorePackages": true }],
+		"import/extensions": ["error", "always", { ignorePackages: true }],
 		"import/first": "error",
 		// Trust the developer
 		"import/group-exports": "off",
