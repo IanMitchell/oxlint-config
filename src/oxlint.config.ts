@@ -865,7 +865,7 @@ export const config = defineConfig({
 		],
 		"vitest/consistent-test-filename": [
 			"error",
-			{ allTestPattern: "__tests__", pattern: ".*\.test\.tsx?$" },
+			{ allTestPattern: "tests", pattern: ".*\\.test\\.tsx?$" },
 		],
 		"vitest/consistent-vitest-vi": ["error", { fn: "vitest" }],
 		"vitest/hoisted-apis-on-top": "error",
