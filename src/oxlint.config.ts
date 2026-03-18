@@ -18,6 +18,7 @@ export const config = defineConfig({
 	],
 	options: {
 		typeAware: true,
+		typeCheck: true,
 	},
 	rules: {
 		/**
