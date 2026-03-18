@@ -273,7 +273,7 @@ export const config = defineConfig({
 		"import/no-cycle": "off",
 		// We want this, but too many libraries have it baked in
 		"import/no-default-export": "off",
-		"import/no-duplicates": ["error", { preferInline: true }],
+		"import/no-duplicates": ["error"],
 		"import/no-dynamic-require": "error",
 		"import/no-empty-named-blocks": "error",
 		"import/no-mutable-exports": "error",
