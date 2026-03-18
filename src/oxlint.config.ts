@@ -101,7 +101,8 @@ export const config = defineConfig({
 		// Handled by TypeScript
 		"no-dupe-keys": "off",
 		"no-duplicate-case": "error",
-		"no-duplicate-imports": "error",
+		// Handled by import/no-duplicates
+		"no-duplicate-imports": "off",
 		"no-else-return": "error",
 		"no-empty": "error",
 		"no-empty-character-class": "error",
@@ -465,14 +466,6 @@ export const config = defineConfig({
 		 */
 		"react/button-has-type": "error",
 		"react/checked-requires-onchange-or-readonly": "error",
-
-		/**
-		 * react-perf
-		 */
-		"react-perf/jsx-no-jsx-as-prop": "error",
-		"react-perf/jsx-no-new-array-as-prop": "error",
-		"react-perf/jsx-no-new-function-as-prop": "error",
-		"react-perf/jsx-no-new-object-as-prop": "error",
 		"react/display-name": "error",
 		"react/exhaustive-deps": "error",
 		// Project dependent
@@ -574,6 +567,14 @@ export const config = defineConfig({
 		"react/state-in-constructor": "off",
 		"react/style-prop-object": "error",
 		"react/void-dom-elements-no-children": "error",
+
+		/**
+		 * react-perf
+		 */
+		"react-perf/jsx-no-jsx-as-prop": "error",
+		"react-perf/jsx-no-new-array-as-prop": "error",
+		"react-perf/jsx-no-new-function-as-prop": "error",
+		"react-perf/jsx-no-new-object-as-prop": "error",
 
 		/**
 		 * typescript
@@ -726,7 +727,8 @@ export const config = defineConfig({
 		"unicorn/new-for-builtins": "error",
 		"unicorn/no-abusive-eslint-disable": "error",
 		"unicorn/no-accessor-recursion": "error",
-		"unicorn/no-anonymous-default-export": "error",
+		// Prefer import/no-anonymous-default-export
+		"unicorn/no-anonymous-default-export": "off",
 		"unicorn/no-array-callback-reference": "error",
 		// Trust the developer
 		"unicorn/no-array-for-each": "off",
