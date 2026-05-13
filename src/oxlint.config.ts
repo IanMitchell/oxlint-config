@@ -43,6 +43,8 @@ export const config = defineConfig({
 		"default-param-last": "error",
 		"eqeqeq": ["error", "always", { null: "ignore" }],
 		"for-direction": "error",
+		// Very unlikely in modern TS
+		"func-name-matching": "off",
 		"func-names": "error",
 		"func-style": [
 			"error",
@@ -57,6 +59,7 @@ export const config = defineConfig({
 		"id-length": "off",
 		// A little too fiddly, gets in the way.
 		"init-declarations": "off",
+		"logical-assignment-operators": ["error", "always", { enforceForIfStatements: true }],
 		// We may want to set this up for Agents
 		"max-classes-per-file": "off",
 		// We may want to set this up for Agents
@@ -166,6 +169,8 @@ export const config = defineConfig({
 		"no-restricted-globals": "off",
 		// This is a setting that should be enabled project by project
 		"no-restricted-imports": "off",
+		// Project dependent
+		"no-restricted-properties": "off",
 		"no-return-assign": "error",
 		"no-script-url": "error",
 		"no-self-assign": "error",
@@ -188,6 +193,8 @@ export const config = defineConfig({
 		"no-undef": "off",
 		// Prefer no-void
 		"no-undefined": "off",
+		// Trust the developer
+		"no-underscore-dangle": "off",
 		"no-unexpected-multiline": "error",
 		"no-unmodified-loop-condition": "error",
 		"no-unneeded-ternary": ["error", { defaultAssignment: false }],
@@ -200,6 +207,7 @@ export const config = defineConfig({
 		"no-unused-private-class-members": "error",
 		"no-unused-vars": "error",
 		"no-use-before-define": "error",
+		"no-useless-assignment": "error",
 		"no-useless-backreference": "error",
 		"no-useless-call": "error",
 		"no-useless-catch": "error",
@@ -215,6 +223,7 @@ export const config = defineConfig({
 		"no-warning-comments": "off",
 		// Handled by TypeScript
 		"no-with": "off",
+		"object-shorthand": ["error", "always"],
 		"operator-assignment": "error",
 		"prefer-const": "error",
 		"prefer-destructuring": "error",
@@ -225,6 +234,8 @@ export const config = defineConfig({
 		"prefer-object-spread": "error",
 		// Prefer `typescript/prefer-promise-reject-errors`
 		"prefer-promise-reject-errors": "off",
+		// Trust the developers
+		"prefer-regex-literals": "off",
 		"prefer-rest-params": "error",
 		"prefer-spread": "error",
 		"prefer-template": "error",
@@ -232,6 +243,7 @@ export const config = defineConfig({
 		"radix": "error",
 		// Inferior to type-aware rules
 		"require-await": "off",
+		"require-unicode-regexp": "error",
 		"require-yield": "error",
 		// Handled by oxfmt
 		"sort-imports": "off",
@@ -339,6 +351,7 @@ export const config = defineConfig({
 		"jsx-a11y/html-has-lang": "error",
 		"jsx-a11y/iframe-has-title": "error",
 		"jsx-a11y/img-redundant-alt": ["error", { components: ["img", "Image"] }],
+		"jsx-a11y/interactive-supports-focus": "error",
 		"jsx-a11y/label-has-associated-control": "error",
 		"jsx-a11y/lang": "error",
 		"jsx-a11y/media-has-caption": "error",
@@ -350,6 +363,7 @@ export const config = defineConfig({
 		"jsx-a11y/no-autofocus": "off",
 		// This situation is extremely uncommon
 		"jsx-a11y/no-distracting-elements": "off",
+		"jsx-a11y/no-noninteractive-element-to-interactive-role": "error",
 		"jsx-a11y/no-noninteractive-tabindex": "error",
 		"jsx-a11y/no-redundant-roles": "error",
 		"jsx-a11y/no-static-element-interactions": "error",
@@ -468,11 +482,14 @@ export const config = defineConfig({
 		"react/checked-requires-onchange-or-readonly": "error",
 		"react/display-name": "error",
 		"react/exhaustive-deps": "error",
+		// We use props
+		"react/forbid-component-props": "off",
 		// Project dependent
 		"react/forbid-dom-props": "off",
 		// Project dependent
 		"react/forbid-elements": "off",
 		"react/forward-ref-uses-ref": "error",
+		"react/hook-use-state": "error",
 		"react/iframe-missing-sandbox": "error",
 		// We probably want to enable this
 		"react/jsx-boolean-value": "off",
@@ -503,6 +520,8 @@ export const config = defineConfig({
 		"react/no-danger-with-children": "error",
 		// We do not use classes
 		"react/no-did-mount-set-state": "off",
+		// We do not use classes
+		"react/no-did-update-set-state": "off",
 		// We do not use classes
 		"react/no-direct-mutation-state": "off",
 		// We use React 19
@@ -557,6 +576,7 @@ export const config = defineConfig({
 		],
 		// We do not use classes
 		"react/prefer-es6-class": "off",
+		"react/prefer-function-component": "error",
 		// Not necessary with modern setups
 		"react/react-in-jsx-scope": "off",
 		// We do not use classes
@@ -607,6 +627,8 @@ export const config = defineConfig({
 		"typescript/dot-notation": "error",
 		// We would like this for exported functions only
 		"typescript/explicit-function-return-type": "off",
+		// We prefer native private fields
+		"typescript/explicit-member-accessibility": "off",
 		"typescript/explicit-module-boundary-types": "error",
 		"typescript/no-array-delete": "error",
 		"typescript/no-base-to-string": "error",
@@ -718,6 +740,8 @@ export const config = defineConfig({
 		"unicorn/consistent-empty-array-spread": "error",
 		"unicorn/consistent-existence-index-check": "error",
 		"unicorn/consistent-function-scoping": "error",
+		"unicorn/consistent-template-literal-escape": "error",
+		"unicorn/custom-error-definition": "error",
 		// Handled by oxfmt
 		"unicorn/empty-brace-spaces": "off",
 		"unicorn/error-message": "error",
@@ -752,6 +776,8 @@ export const config = defineConfig({
 		"unicorn/no-length-as-slice-end": "error",
 		"unicorn/no-lonely-if": "error",
 		"unicorn/no-magic-array-flat-depth": "error",
+		// Too fiddly
+		"unicorn/no-negated-condition": "off",
 		"unicorn/no-negation-in-equality-check": "error",
 		// Prefer the stricter `no-nested-ternary` rule
 		"unicorn/no-nested-ternary": "off",
@@ -776,6 +802,7 @@ export const config = defineConfig({
 		"unicorn/no-unreadable-iife": "error",
 		"unicorn/no-useless-collection-argument": "error",
 		"unicorn/no-useless-error-capture-stack-trace": "error",
+		"unicorn/no-useless-iterator-to-array": "error",
 		"unicorn/no-useless-fallback-in-spread": "error",
 		"unicorn/no-useless-length-check": "error",
 		"unicorn/no-useless-promise-resolve-reject": "error",
@@ -807,6 +834,7 @@ export const config = defineConfig({
 		"unicorn/prefer-dom-node-text-content": "error",
 		"unicorn/prefer-event-target": "error",
 		"unicorn/prefer-global-this": "error",
+		"unicorn/prefer-import-meta-properties": "error",
 		// Prefer the `typescript/prefer-includes` rule
 		"unicorn/prefer-includes": "off",
 		"unicorn/prefer-keyboard-event-key": "error",
@@ -851,6 +879,7 @@ export const config = defineConfig({
 		// A little too fiddly, gets in the way
 		"unicorn/require-post-message-target-origin": "off",
 		"unicorn/switch-case-braces": ["error", "always"],
+		"unicorn/switch-case-break-position": "error",
 		"unicorn/text-encoding-identifier-case": "error",
 		"unicorn/throw-new-error": "error",
 
@@ -872,23 +901,84 @@ export const config = defineConfig({
 		],
 		"vitest/consistent-vitest-vi": ["error", { fn: "vitest" }],
 		"vitest/hoisted-apis-on-top": "error",
+		// Trust the developer
+		"vitest/max-expects": "error",
+		// Trust the developer
+		"vitest/max-nested-describe": "off",
+		// We prefer some of the alias method names
+		"vitest/no-alias-methods": "off",
+		"vitest/no-commented-out-tests": "error",
+		"vitest/no-conditional-expect": "error",
+		"vitest/no-conditional-in-test": "error",
 		"vitest/no-conditional-tests": "error",
+		"vitest/no-disabled-tests": "error",
+		"vitest/no-duplicate-hooks": "error",
+		"vitest/no-focused-tests": "error",
+		// Trust the developer
+		"vitest/no-hooks": "off",
+		"vitest/no-identical-title": "error",
+		"vitest/no-interpolation-in-snapshots": "error",
 		"vitest/no-import-node-test": "error",
 		// We don't configure for globals
 		"vitest/no-importing-vitest-globals": "off",
+		"vitest/no-large-snapshots": "error",
+		// We disable mocks
+		"vitest/no-mocks-import": "off",
+		// Project dependent
+		"vitest/no-restricted-matchers": "off",
+		// Project dependent
+		"vitest/no-restricted-vi-methods": "off",
+		"vitest/no-standalone-expect": "error",
+		"vitest/no-test-prefixes": "error",
+		"vitest/no-test-return-statement": "error",
+		"vitest/no-unneeded-async-expect-function": "error",
 		"vitest/prefer-called-once": "error",
+		"vitest/prefer-called-exactly-once-with": "error",
 		// We prefer called-once
 		"vitest/prefer-called-times": "off",
+		// Trust the developer
+		"vitest/prefer-called-with": "off",
+		"vitest/prefer-comparison-matcher": "error",
 		"vitest/prefer-describe-function-title": "error",
+		"vitest/prefer-each": "error",
+		"vitest/prefer-equality-matcher": "error",
+		"vitest/prefer-expect-resolves": "error",
 		// Subjectively harder to read and write
 		"vitest/prefer-expect-type-of": "off",
+		"vitest/prefer-hooks-in-order": "error",
+		"vitest/prefer-hooks-on-top": "error",
 		"vitest/prefer-import-in-mock": "error",
+		"vitest/prefer-importing-vitest-globals": "error",
+		// Trust the developer
+		"vitest/prefer-lowercase-title": "off",
+		"vitest/prefer-mock-promise-shorthand": "error",
+		"vitest/prefer-mock-return-shorthand": "error",
+		// Trust the developer
+		"vitest/prefer-to-be": "off",
 		// Trust the developer
 		"vitest/prefer-to-be-falsy": "off",
+		"vitest/prefer-to-have-been-called-times": "error",
+		"vitest/prefer-to-have-length": "error",
+		"vitest/prefer-todo": "error",
+		"vitest/prefer-snapshot-hint": ["error", "always"],
+		"vitest/prefer-spy-on": "error",
+		"vitest/prefer-strict-boolean-matchers": "error",
+		"vitest/prefer-strict-equal": "error",
 		"vitest/prefer-to-be-object": "error",
 		// Trust the developer
 		"vitest/prefer-to-be-truthy": "off",
+		"vitest/prefer-to-contain": "error",
+		"vitest/require-awaited-expect-poll": "error",
+		"vitest/require-hook": "error",
 		"vitest/require-local-test-context-for-concurrent-snapshots": "error",
+		"vitest/require-mock-type-parameters": "error",
+		"vitest/require-test-timeout": "error",
+		"vitest/require-to-throw-message": "error",
+		// Trust the developer
+		"vitest/require-top-level-describe": "off",
+		"vitest/valid-expect-in-promise": "error",
+		// Should be handled by TypeScript
+		"vitest/valid-describe-callback": "off",
 		"vitest/warn-todo": "error",
 	},
 });
