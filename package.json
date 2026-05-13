@@ -1,6 +1,6 @@
 {
 	"name": "@0x57/oxlint-config",
-	"version": "0.1.4",
+	"version": "0.2.0",
 	"description": "Shared oxlint configuration used by 0x57 projects",
 	"type": "module",
 	"exports": {

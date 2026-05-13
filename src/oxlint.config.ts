@@ -285,8 +285,7 @@ export const config = defineConfig({
 		"import/no-commonjs": "error",
 		// Trust the developer
 		"import/no-cycle": "off",
-		// We want this, but too many libraries have it baked in
-		"import/no-default-export": "off",
+		"import/no-default-export": "error",
 		"import/no-duplicates": ["error"],
 		"import/no-dynamic-require": "error",
 		"import/no-empty-named-blocks": "error",
@@ -306,7 +305,7 @@ export const config = defineConfig({
 		"import/no-unassigned-import": "off",
 		// We do not use webpack
 		"import/no-webpack-loader-syntax": "off",
-		// We prefer default exports
+		// We prefer named exports
 		"import/prefer-default-export": "off",
 		"import/unambiguous": "error",
 
@@ -412,7 +411,8 @@ export const config = defineConfig({
 		 */
 		// We use ESM
 		"node/global-require": "off",
-		"node/handle-callback-err": "error",
+		// We use modern async APIs
+		"node/handle-callback-err": "off",
 		// We use ESM
 		"node/no-exports-assign": "off",
 		// We use ESM
@@ -906,7 +906,7 @@ export const config = defineConfig({
 		"vitest/expect-expect": "error",
 		"vitest/hoisted-apis-on-top": "error",
 		// Trust the developer
-		"vitest/max-expects": "error",
+		"vitest/max-expects": "off",
 		// Trust the developer
 		"vitest/max-nested-describe": "off",
 		// We prefer some of the alias method names
