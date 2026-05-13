@@ -165,6 +165,8 @@ export const config = defineConfig({
 		"no-prototype-builtins": "error",
 		"no-redeclare": "error",
 		"no-regex-spaces": "error",
+		// Project dependent
+		"no-restricted-exports": "off",
 		// Not necessary
 		"no-restricted-globals": "off",
 		// This is a setting that should be enabled project by project
@@ -899,7 +901,9 @@ export const config = defineConfig({
 			"error",
 			{ allTestPattern: "tests", pattern: ".*\\.test\\.tsx?$" },
 		],
+		"vitest/consistent-test-it": ["error", { fn: "test", withinDescribe: "test" }],
 		"vitest/consistent-vitest-vi": ["error", { fn: "vitest" }],
+		"vitest/expect-expect": "error",
 		"vitest/hoisted-apis-on-top": "error",
 		// Trust the developer
 		"vitest/max-expects": "error",
@@ -942,6 +946,14 @@ export const config = defineConfig({
 		"vitest/prefer-describe-function-title": "error",
 		"vitest/prefer-each": "error",
 		"vitest/prefer-equality-matcher": "error",
+		"vitest/prefer-expect-assertions": [
+			"error",
+			{
+				onlyFunctionsWithAsyncKeyword: true,
+				onlyFunctionsWithExpectInCallback: true,
+				onlyFunctionsWithExpectInLoop: true,
+			},
+		],
 		"vitest/prefer-expect-resolves": "error",
 		// Subjectively harder to read and write
 		"vitest/prefer-expect-type-of": "off",
@@ -979,6 +991,8 @@ export const config = defineConfig({
 		"vitest/valid-expect-in-promise": "error",
 		// Should be handled by TypeScript
 		"vitest/valid-describe-callback": "off",
+		"vitest/valid-expect": "error",
+		"vitest/valid-title": "error",
 		"vitest/warn-todo": "error",
 	},
 });
