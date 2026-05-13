@@ -237,7 +237,7 @@ export const config: OxlintConfig = defineConfig({
 		// Prefer `typescript/prefer-promise-reject-errors`
 		"prefer-promise-reject-errors": "off",
 		// Trust the developers
-		"prefer-regex-literals": "off",
+		// "prefer-regex-literals": "off",
 		"prefer-rest-params": "error",
 		"prefer-spread": "error",
 		"prefer-template": "error",
@@ -364,7 +364,7 @@ export const config: OxlintConfig = defineConfig({
 		"jsx-a11y/no-autofocus": "off",
 		// This situation is extremely uncommon
 		"jsx-a11y/no-distracting-elements": "off",
-		"jsx-a11y/no-noninteractive-element-to-interactive-role": "error",
+		// "jsx-a11y/no-noninteractive-element-to-interactive-role": "error",
 		"jsx-a11y/no-noninteractive-tabindex": "error",
 		"jsx-a11y/no-redundant-roles": "error",
 		"jsx-a11y/no-static-element-interactions": "error",
