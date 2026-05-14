@@ -593,9 +593,11 @@ export const config: OxlintConfig = defineConfig({
 		/**
 		 * react-perf
 		 */
-		"react-perf/jsx-no-jsx-as-prop": "error",
+		// Handled by React Compiler
+		"react-perf/jsx-no-jsx-as-prop": "off",
 		"react-perf/jsx-no-new-array-as-prop": "error",
-		"react-perf/jsx-no-new-function-as-prop": "error",
+		// Handled by React Compiler
+		"react-perf/jsx-no-new-function-as-prop": "off",
 		"react-perf/jsx-no-new-object-as-prop": "error",
 
 		/**
@@ -653,7 +655,14 @@ export const config: OxlintConfig = defineConfig({
 		"typescript/no-invalid-void-type": "error",
 		"typescript/no-meaningless-void-operator": "error",
 		"typescript/no-misused-new": "error",
-		"typescript/no-misused-promises": "error",
+		"typescript/no-misused-promises": [
+			"error",
+			{
+				checksVoidReturn: {
+					attributes: false,
+				},
+			},
+		],
 		"typescript/no-misused-spread": "error",
 		"typescript/no-mixed-enums": "error",
 		"typescript/no-namespace": "error",
@@ -724,8 +733,12 @@ export const config: OxlintConfig = defineConfig({
 		"typescript/restrict-template-expressions": "error",
 		"typescript/return-await": ["error", "always"],
 		"typescript/strict-boolean-expressions": "error",
-		"typescript/strict-void-return": "error",
-		"typescript/switch-exhaustiveness-check": "error",
+		// Prefer typescript/no-misused-promises
+		"typescript/strict-void-return": "off",
+		"typescript/switch-exhaustiveness-check": [
+			"error",
+			{ considerDefaultExhaustiveForUnions: true },
+		],
 		"typescript/triple-slash-reference": "error",
 		"typescript/unbound-method": "error",
 		"typescript/unified-signatures": "error",
@@ -995,4 +1008,12 @@ export const config: OxlintConfig = defineConfig({
 		"vitest/valid-title": "error",
 		"vitest/warn-todo": "error",
 	},
+	overrides: [
+		{
+			files: ["vite.config.ts"],
+			rules: {
+				"import/no-default-export": "off",
+			},
+		},
+	],
 });
