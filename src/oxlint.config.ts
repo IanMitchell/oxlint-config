@@ -208,10 +208,13 @@ export const config: OxlintConfig = defineConfig({
 		"react/jsx-no-duplicate-props": "error",
 		// Handled by React Compiler
 		"react-perf/jsx-no-jsx-as-prop": "off",
+		// Unnecessary
+		"react/jsx-no-literals": "off",
 		"react-perf/jsx-no-new-array-as-prop": "error",
 		// Handled by React Compiler
 		"react-perf/jsx-no-new-function-as-prop": "off",
-		"react-perf/jsx-no-new-object-as-prop": "error",
+		// Handled by React Compiler
+		"react-perf/jsx-no-new-object-as-prop": "off",
 		"react/jsx-no-script-url": "error",
 		"react/jsx-no-target-blank": "error",
 		// Handled by TypeScript
@@ -253,7 +256,10 @@ export const config: OxlintConfig = defineConfig({
 		"import/named": "off",
 		// Handled by TypeScript
 		"import/namespace": "off",
-		"new-cap": ["error", { newIsCap: true, capIsNew: true, properties: true }],
+		"new-cap": [
+			"error",
+			{ newIsCap: true, capIsNew: true, properties: true, capIsNewExceptions: ["TaggedError"] },
+		],
 		"unicorn/new-for-builtins": "error",
 		"import/newline-after-import": "error",
 		"nextjs/next-script-for-ga": "error",
@@ -504,7 +510,7 @@ export const config: OxlintConfig = defineConfig({
 		"typescript/no-non-null-asserted-optional-chain": "error",
 		"typescript/no-non-null-assertion": "error",
 		"jsx-a11y/no-noninteractive-element-interactions": "error",
-		// "jsx-a11y/no-noninteractive-element-to-interactive-role": "error",
+		"jsx-a11y/no-noninteractive-element-to-interactive-role": "error",
 		"jsx-a11y/no-noninteractive-tabindex": "error",
 		// Incredibly unlikely
 		"no-nonoctal-decimal-escape": "off",
@@ -696,7 +702,8 @@ export const config: OxlintConfig = defineConfig({
 		"unicorn/no-zero-fractions": "error",
 		"typescript/non-nullable-type-assertion-style": "error",
 		"oxc/number-arg-out-of-range": "error",
-		"unicorn/number-literal-case": "error",
+		// Handled by oxfmt
+		"unicorn/number-literal-case": "off",
 		// We may want to enable this
 		"unicorn/numeric-separators-style": "off",
 		"object-shorthand": ["error", "always"],
@@ -839,7 +846,7 @@ export const config: OxlintConfig = defineConfig({
 		"typescript/prefer-reduce-type-parameter": "error",
 		"unicorn/prefer-reflect-apply": "error",
 		// Trust the developers
-		// "prefer-regex-literals": "off",
+		"prefer-regex-literals": "off",
 		"typescript/prefer-regexp-exec": "error",
 		"unicorn/prefer-regexp-test": "error",
 		"unicorn/prefer-response-static-json": "error",
@@ -884,6 +891,7 @@ export const config: OxlintConfig = defineConfig({
 		"preserve-caught-error": "error",
 		"typescript/promise-function-async": "error",
 		"radix": "error",
+		"react/react-compiler": "error",
 		// Not necessary with modern setups
 		"react/react-in-jsx-scope": "off",
 		// Trust the developer
@@ -920,7 +928,8 @@ export const config: OxlintConfig = defineConfig({
 		"jsdoc/require-returns-description": "error",
 		// Handled by TypeScript
 		"jsdoc/require-returns-type": "off",
-		"vitest/require-test-timeout": "error",
+		// Default of 5_000 is fine
+		"vitest/require-test-timeout": "off",
 		// We use better-result
 		"jsdoc/require-throws-description": "off",
 		// We use better-result
