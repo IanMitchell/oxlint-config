@@ -15,16 +15,16 @@
 	"scripts": {
 		"format": "oxfmt",
 		"lint": "oxlint",
-		"build": "tsc",
+		"build": "tsgo",
 		"prepare": "bun run format && bun run build"
 	},
 	"devDependencies": {
-		"@0x57/oxfmt-config": "1.0.6",
-		"@0x57/typescript-config": "1.3.2",
+		"@0x57/oxfmt-config": "1.0.7",
+		"@0x57/typescript-config": "2.0.0",
 		"@typescript/native-preview": "7.0.0-dev.20260512.1",
-		"oxfmt": "0.49.0"
+		"oxfmt": "0.55.0"
 	},
 	"peerDependencies": {
-		"oxlint": "1.64.0"
+		"oxlint": "1.70.0"
 	}
 }
