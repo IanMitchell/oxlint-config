@@ -891,7 +891,7 @@ export const config: OxlintConfig = defineConfig({
 		"preserve-caught-error": "error",
 		"typescript/promise-function-async": "error",
 		"radix": "error",
-		"react/react-compiler": "error",
+		"react/react-compiler": ["error", { reportAllBailouts: true }],
 		// Not necessary with modern setups
 		"react/react-in-jsx-scope": "off",
 		// Trust the developer

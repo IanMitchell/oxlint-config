@@ -1,6 +1,6 @@
 {
 	"name": "@0x57/oxlint-config",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "Shared oxlint configuration used by 0x57 projects",
 	"type": "module",
 	"exports": {
@@ -21,10 +21,12 @@
 	"devDependencies": {
 		"@0x57/oxfmt-config": "1.0.7",
 		"@0x57/typescript-config": "2.0.0",
-		"@typescript/native-preview": "7.0.0-dev.20260512.1",
-		"oxfmt": "0.55.0"
+		"@typescript/native-preview": "7.0.0-dev.20260616.1",
+		"oxfmt": "0.55.0",
+		"oxlint": "1.70.0"
 	},
 	"peerDependencies": {
-		"oxlint": "1.70.0"
+		"oxlint": "1.70.0",
+		"oxlint-tsgolint": "0.23.0"
 	}
 }
