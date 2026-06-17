@@ -1,12 +1,12 @@
 {
 	"name": "@0x57/oxlint-config",
-	"version": "0.2.4",
+	"version": "0.3.0",
 	"description": "Shared oxlint configuration used by 0x57 projects",
 	"type": "module",
 	"exports": {
 		".": {
-			"types": "./dist/oxlint.config.d.ts",
-			"default": "./dist/oxlint.config.js"
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
 		}
 	},
 	"publishConfig": {

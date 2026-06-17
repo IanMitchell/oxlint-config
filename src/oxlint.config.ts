@@ -11,7 +11,6 @@ export const config: OxlintConfig = defineConfig({
 		"jsdoc",
 		"vitest",
 		"jsx-a11y",
-		"nextjs",
 		"react-perf",
 		"promise",
 		"node",
@@ -167,8 +166,6 @@ export const config: OxlintConfig = defineConfig({
 		"getter-return": "off",
 		// We use ESM
 		"node/global-require": "off",
-		"nextjs/google-font-display": "error",
-		"nextjs/google-font-preconnect": "error",
 		// Trust the developer
 		"import/group-exports": "off",
 		"grouped-accessor-pairs": "error",
@@ -191,7 +188,6 @@ export const config: OxlintConfig = defineConfig({
 		"unicorn/import-style": "off",
 		// A little too fiddly, gets in the way.
 		"init-declarations": "off",
-		"nextjs/inline-script-id": "error",
 		"jsx-a11y/interactive-supports-focus": "error",
 		// We probably want to enable this
 		"react/jsx-boolean-value": "off",
@@ -262,7 +258,6 @@ export const config: OxlintConfig = defineConfig({
 		],
 		"unicorn/new-for-builtins": "error",
 		"import/newline-after-import": "error",
-		"nextjs/next-script-for-ga": "error",
 		"import/no-absolute-path": "error",
 		"unicorn/no-abusive-eslint-disable": "error",
 		// This situation is extremely uncommon
@@ -288,10 +283,8 @@ export const config: OxlintConfig = defineConfig({
 		"unicorn/no-array-reduce": "error",
 		"unicorn/no-array-reverse": "error",
 		"unicorn/no-array-sort": "error",
-		"nextjs/no-assign-module-variable": "error",
 		// Meant for older codebases
 		"oxc/no-async-await": "off",
-		"nextjs/no-async-client-component": "error",
 		// We do not use Hono
 		"oxc/no-async-endpoint-handlers": "off",
 		"no-async-promise-executor": "error",
@@ -302,8 +295,6 @@ export const config: OxlintConfig = defineConfig({
 		"unicorn/no-await-in-promise-methods": "error",
 		"oxc/no-barrel-file": "error",
 		"typescript/no-base-to-string": "error",
-		// Pages rule
-		"nextjs/no-before-interactive-script-outside-document": "off",
 		// Trust the developer
 		"no-bitwise": "off",
 		"promise/no-callback-in-promise": "error",
@@ -333,7 +324,6 @@ export const config: OxlintConfig = defineConfig({
 		// Trust the developer
 		"no-continue": "off",
 		"no-control-regex": "error",
-		"nextjs/no-css-tags": "error",
 		// Trust the developer
 		"import/no-cycle": "off",
 		"react/no-danger": "error",
@@ -354,8 +344,6 @@ export const config: OxlintConfig = defineConfig({
 		"jsx-a11y/no-distracting-elements": "off",
 		"no-div-regex": "error",
 		"unicorn/no-document-cookie": "error",
-		// Pages rule
-		"nextjs/no-document-import-in-page": "off",
 		// Handled by TypeScript
 		"no-dupe-class-members": "off",
 		"no-dupe-else-if": "error",
@@ -363,8 +351,6 @@ export const config: OxlintConfig = defineConfig({
 		"no-dupe-keys": "off",
 		"no-duplicate-case": "error",
 		"typescript/no-duplicate-enum-values": "error",
-		// Pages rule
-		"nextjs/no-duplicate-head": "off",
 		"vitest/no-duplicate-hooks": "error",
 		// Handled by import/no-duplicates
 		"no-duplicate-imports": "off",
@@ -405,15 +391,10 @@ export const config: OxlintConfig = defineConfig({
 		// Handled by TypeScript
 		"no-func-assign": "off",
 		"no-global-assign": "error",
-		"nextjs/no-head-element": "error",
-		// Pages rule
-		"nextjs/no-head-import-in-document": "off",
 		"unicorn/no-hex-escape": "error",
 		// Trust the developer
 		"vitest/no-hooks": "off",
-		"nextjs/no-html-link-for-pages": "error",
 		"vitest/no-identical-title": "error",
-		"nextjs/no-img-element": "error",
 		"unicorn/no-immediate-mutation": "error",
 		"no-implicit-coercion": "error",
 		// We write one-off scripts more than we write browser scripts
@@ -523,8 +504,6 @@ export const config: OxlintConfig = defineConfig({
 		"react/no-object-type-as-default-prop": "error",
 		// Meant for older codebases
 		"oxc/no-optional-chaining": "off",
-		// Pages rule
-		"nextjs/no-page-custom-font": "off",
 		"no-param-reassign": "error",
 		// We use ESM
 		"node/no-path-concat": "off",
@@ -568,7 +547,6 @@ export const config: OxlintConfig = defineConfig({
 		"no-return-assign": "error",
 		"promise/no-return-in-finally": "error",
 		"promise/no-return-wrap": "error",
-		"nextjs/no-script-component-in-head": "error",
 		"no-script-url": "error",
 		"no-self-assign": "error",
 		"no-self-compare": "error",
@@ -587,9 +565,6 @@ export const config: OxlintConfig = defineConfig({
 		"unicorn/no-static-only-class": "error",
 		// We use React 19
 		"react/no-string-refs": "off",
-		// Pages rule
-		"nextjs/no-styled-jsx-in-document": "off",
-		"nextjs/no-sync-scripts": "error",
 		"no-template-curly-in-string": "error",
 		// Trust the developer
 		"no-ternary": "off",
@@ -605,10 +580,7 @@ export const config: OxlintConfig = defineConfig({
 		"react/no-this-in-sfc": "error",
 		// Deprecated
 		"no-throw-literal": "off",
-		"nextjs/no-title-in-document-head": "error",
 		"unicorn/no-typeof-undefined": "error",
-		// Pages rule
-		"nextjs/no-typos": "off",
 		// Breaks lifting side effect imports
 		"import/no-unassigned-import": "off",
 		"no-unassigned-vars": "error",
@@ -662,7 +634,6 @@ export const config: OxlintConfig = defineConfig({
 		"no-unused-labels": "error",
 		"no-unused-private-class-members": "error",
 		"no-unused-vars": "error",
-		"nextjs/no-unwanted-polyfillio": "error",
 		"no-use-before-define": "error",
 		"no-useless-assignment": "error",
 		"no-useless-backreference": "error",
@@ -973,7 +944,8 @@ export const config: OxlintConfig = defineConfig({
 		"symbol-description": "error",
 		"jsx-a11y/tabindex-no-positive": "error",
 		"unicorn/text-encoding-identifier-case": "error",
-		"unicorn/throw-new-error": "error",
+		// Incorrectly tags things like "TaggedError"
+		"unicorn/throw-new-error": "off",
 		"typescript/triple-slash-reference": "error",
 		"import/unambiguous": "error",
 		"typescript/unbound-method": "error",
