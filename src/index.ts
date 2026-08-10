@@ -1,2 +1,14 @@
 export { config } from "./oxlint.config.ts";
 export { config as nextConfig } from "./next.ts";
+export { eslintConfig } from "./plugins/eslint.ts";
+export { importConfig } from "./plugins/import.ts";
+export { jsdocConfig } from "./plugins/jsdoc.ts";
+export { jsxA11yConfig } from "./plugins/jsx-a11y.ts";
+export { nodeConfig } from "./plugins/node.ts";
+export { oxcConfig } from "./plugins/oxc.ts";
+export { promiseConfig } from "./plugins/promise.ts";
+export { reactConfig } from "./plugins/react.ts";
+export { reactPerfConfig } from "./plugins/react-perf.ts";
+export { typescriptConfig } from "./plugins/typescript.ts";
+export { unicornConfig } from "./plugins/unicorn.ts";
+export { vitestConfig } from "./plugins/vitest.ts";

@@ -13,6 +13,9 @@ import { config } from "@0x57/oxlint-config";
 export default config;
 ```
 
+The combined `config` includes every standard plugin ruleset. Individual rulesets are also
+available as named exports, such as `typescriptConfig`, `reactConfig`, and `vitestConfig`.
+
 ## Next.js Rules
 
 If you're using Next.js, you can specify additional rules in your config:

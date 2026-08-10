@@ -1,6 +1,6 @@
 {
 	"name": "@0x57/oxlint-config",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Shared oxlint configuration used by 0x57 projects",
 	"type": "module",
 	"exports": {
@@ -14,19 +14,24 @@
 	},
 	"scripts": {
 		"format": "oxfmt",
-		"lint": "oxlint",
+		"lint": "oxlint --disable-nested-config",
 		"build": "tsgo",
 		"prepare": "bun run format && bun run build"
 	},
 	"devDependencies": {
-		"@0x57/oxfmt-config": "1.0.7",
-		"@0x57/typescript-config": "2.0.0",
-		"@typescript/native-preview": "7.0.0-dev.20260616.1",
-		"oxfmt": "0.55.0",
-		"oxlint": "1.70.0"
+		"@0x57/oxfmt-config": "1.0.11",
+		"@0x57/typescript-config": "2.0.2",
+		"oxlint": "1.78.0"
 	},
 	"peerDependencies": {
-		"oxlint": "1.70.0",
-		"oxlint-tsgolint": "0.23.0"
+		"oxlint": "1.78.0",
+		"oxlint-tsgolint": "7.0.2001"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "bun",
+			"version": "1.3.14",
+			"onFail": "download"
+		}
 	}
 }
